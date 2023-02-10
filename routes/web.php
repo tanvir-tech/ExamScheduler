@@ -18,9 +18,8 @@ use App\Http\Controllers\ScheduleController;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('frontend/routine');
-});
+
+Route::get('/', [ScheduleController::class, 'frontindex']);
 
 Route::prefix('admin')->middleware([
     'auth:sanctum',

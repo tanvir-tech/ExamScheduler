@@ -19,6 +19,12 @@ class ScheduleController extends Controller
         return view('backend/routine',['schedules'=>$schedules]);
     }
 
+    public function frontindex()
+    {
+        $schedules=Schedule::all();
+        return view('frontend/routine',['schedules'=>$schedules]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

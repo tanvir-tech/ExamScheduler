@@ -5,9 +5,9 @@
 
 
         <div class="card">
-            <div class="card-header">
+            <div class="card-header d-flex justify-content-center">
                 <div class="card-title">
-                    Exam Routine
+                    Edit Exam Routine
                 </div>
             </div>
             <div class="card-body">
@@ -24,18 +24,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Math</td>
-                            <td>205</td>
-                            <td>02/05/2023</td>
-                            <td>09.30</td>
-                            <td>12.30</td>
-                        </tr>
+                        @foreach ($schedules as $schedule)
+                            <tr>
+                                <th scope="row">{{ $schedule['id'] }}</th>
+                                <td>{{ $schedule['faculty'] }}</td>
+                                <td>{{ $schedule['course'] }}</td>
+                                <td>{{ $schedule['room'] }}</td>
+                                <td>{{ $schedule['date'] }}</td>
+                                <td>{{ $schedule['start'] }}</td>
+                                <td>{{ $schedule['end'] }}</td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
+
+
         </div>
 
 
