@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ScheduleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,19 +28,26 @@ Route::prefix('admin')->middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('frontend/routine');
+        return view('backend/routine');
     })->name('dashboard');
-
-
-    Route::get('/edit', function () {
-        return view('backend/editRoutine');
-    });
-    Route::get('/add', function () {
-        return view('backend/addExam');
-    });
+    
     Route::get('/list', function () {
         return view('backend/routine');
     });
+
+
+
+
+    // Route::get('/edit', function () {
+    //     return view('backend/editRoutine');
+    // });
+    Route::get('/add', function () {
+        return view('backend/addExam');
+    });
+    
+
+
+    Route::resource('schedule', ScheduleController::class);
 });
 
 

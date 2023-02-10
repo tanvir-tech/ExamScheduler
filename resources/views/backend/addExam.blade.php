@@ -1,50 +1,49 @@
 @extends('includes/master')
 @section('content')
     <div class="container">
-        <form class="row g-3">
-            <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail4">
+        <div class="card">
+            <div class="card-header">
+                <h1>
+                    Add a new schedule
+                </h1>
             </div>
-            <div class="col-md-6">
-                <label for="inputPassword4" class="form-label">Password</label>
-                <input type="password" class="form-control" id="inputPassword4">
+            <div class="card-body">
+                <form class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Faculty</label>
+                        <input class="form-control" name="faculty">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Course</label>
+                        <input class="form-control" name="course">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Room</label>
+                        <input class="form-control" name="room">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Date</label>
+                        <input type="date" class="form-control" name="date">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Start-time</label>
+                        <input type="time" class="form-control" name="start">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">End-time</label>
+                        <input type="time" class="form-control" name="end">
+                    </div>
+
+
+                    <br><br><br>
+
+
+                    <div class="col-md-6 m-2">
+                        <button type="submit" class="btn btn-primary">Add Exam</button>
+                    </div>
+                </form>
             </div>
-            <div class="col-12">
-                <label for="inputAddress" class="form-label">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-            <div class="col-12">
-                <label for="inputAddress2" class="form-label">Address 2</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="col-md-6">
-                <label for="inputCity" class="form-label">City</label>
-                <input type="text" class="form-control" id="inputCity">
-            </div>
-            <div class="col-md-4">
-                <label for="inputState" class="form-label">State</label>
-                <select id="inputState" class="form-select">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                </select>
-            </div>
-            <div class="col-md-2">
-                <label for="inputZip" class="form-label">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
-            </div>
-            <div class="col-12">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                        Check me out
-                    </label>
-                </div>
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Sign in</button>
-            </div>
-        </form>
+        </div>
 
     </div>
 @endsection
