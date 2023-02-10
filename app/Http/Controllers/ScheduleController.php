@@ -14,7 +14,9 @@ class ScheduleController extends Controller
      */
     public function index()
     {
-        //
+        $schedules=Schedule::all();
+        // return $schedules;
+        return view('backend/routine',['schedules'=>$schedules]);
     }
 
     /**
@@ -35,7 +37,17 @@ class ScheduleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $schedule = new Schedule();
+        $schedule->faculty = $request->faculty;
+        $schedule->course = $request->course;
+        $schedule->room = $request->room;
+        $schedule->date = $request->date;
+        $schedule->start = $request->start;
+        $schedule->end = $request->end;
+
+        $schedule->save();
+
+        return redirect('/admin/dashboard');
     }
 
     /**
@@ -78,8 +90,12 @@ class ScheduleController extends Controller
      * @param  \App\Models\Schedule  $schedule
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Schedule $schedule)
+    public function destroy($schedule)
     {
-        //
+        $schedule = Schedule::find($schedule);
+
+        $schedule->delete();
+
+        return redirect('/admin/dashboard');
     }
 }

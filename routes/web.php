@@ -28,7 +28,8 @@ Route::prefix('admin')->middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('backend/routine');
+        // return view('backend/routine');
+        return redirect('/admin/schedule');
     })->name('dashboard');
     
     Route::get('/list', function () {

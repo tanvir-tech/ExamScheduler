@@ -21,11 +21,11 @@
                             <th scope="col">Date</th>
                             <th scope="col">Start-time</th>
                             <th scope="col">End-time</th>
-                            <th scope="col">Option</th>
+                            <th scope="col" colspan="2">Option</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        {{-- <tr>
                             <th scope="row">1</th>
                             <td>Mark</td>
                             <td>Math</td>
@@ -41,7 +41,34 @@
                                     Delete
                                 </button>
                             </td>
-                        </tr>
+                        </tr> --}}
+                        @foreach ($schedules as $schedule)
+                            <tr>
+                                <th scope="row">{{ $schedule['id'] }}</th>
+                                <td>{{ $schedule['faculty'] }}</td>
+                                <td>{{ $schedule['course'] }}</td>
+                                <td>{{ $schedule['room'] }}</td>
+                                <td>{{ $schedule['date'] }}</td>
+                                <td>{{ $schedule['start'] }}</td>
+                                <td>{{ $schedule['end'] }}</td>
+                                <td>
+                                    <button class="btn btn-warning">
+                                        Edit
+                                    </button>
+
+                                </td>
+                                <td>
+                                    <form action="{{ route('schedule.destroy', ['schedule' => $schedule->id]) }}"
+                                        method="POST">
+                                        @csrf
+
+                                        @method('DELETE')
+
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

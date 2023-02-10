@@ -8,7 +8,8 @@
                 </h1>
             </div>
             <div class="card-body">
-                <form class="row">
+                <form class="row" action="/admin/schedule" method="POST">
+                    @csrf
                     <div class="col-md-6">
                         <label class="form-label">Faculty</label>
                         <input class="form-control" name="faculty">

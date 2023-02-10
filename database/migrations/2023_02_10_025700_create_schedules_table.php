@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
+            $table->string('faculty');
+            $table->string('course');
+            $table->integer('room');
+            $table->date('date');
+            $table->time('start');
+            $table->time('end');
             $table->timestamps();
         });
     }
